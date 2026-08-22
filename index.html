@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ODAA Gallery Production Line — premium caps and snapbacks by Adal Digital.">
+  <meta name="theme-color" content="#0b0b0b">
+  <title>ODAA Gallery — Caps & Snapbacks</title>
+  <style>
+    :root{
+      --bg:#070707; --panel:#101010; --panel-2:#151515; --text:#f5f5f5;
+      --muted:#a9a9a9; --line:#262626; --accent:#e11b22; --gold:#d9b65d;
+      --white:#fff; --radius:20px; --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{width:min(var(--max),calc(100% - 32px));margin:auto}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.06em}
+    .og{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#fff 0 47%,#e11b22 48%);color:#060606;font-weight:900;font-size:15px}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.2em;margin-top:2px}
+    .nav-links{display:flex;gap:22px;font-size:14px;color:#d7d7d7}
+    .nav-links a:hover{color:#fff}
+    .hero{padding:56px 0 40px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+    .eyebrow{color:var(--accent);font-weight:800;letter-spacing:.2em;font-size:12px}
+    h1{font-size:clamp(44px,7vw,84px);line-height:.95;margin:12px 0 20px;letter-spacing:-.045em}
+    h1 span{color:var(--accent)}
+    .hero-copy{max-width:600px;color:#c8c8c8;font-size:18px}
+    .price{font-size:34px;font-weight:850;margin:24px 0 8px}
+    .price small{font-size:13px;color:var(--muted);font-weight:600}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;border-radius:12px;border:1px solid var(--line);font-weight:800}
+    .btn-primary{background:var(--accent);border-color:var(--accent)}
+    .btn-secondary{background:#111}
+    .hero-card{background:#0d0d0d;border:1px solid var(--line);padding:12px;border-radius:24px;box-shadow:0 26px 80px rgba(0,0,0,.45)}
+    .hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px}
+    .section{padding:54px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+    .section-head h2{margin:0;font-size:34px;letter-spacing:-.03em}
+    .section-head p{margin:0;color:var(--muted);max-width:520px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .swatch{height:6px}
+    .product-media{aspect-ratio:1/1;background:#141414;overflow:hidden}
+    .product-media img{width:100%;height:100%;object-fit:cover;transition:.35s}
+    .card:hover .product-media img{transform:scale(1.035)}
+    .card-body{padding:16px}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+    .tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;letter-spacing:.1em;color:#ddd}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
+    .panel h3{margin-top:0}
+    .panel p{color:#c6c6c6}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .feature{border-top:1px solid var(--line);padding-top:14px}
+    .feature b{display:block;margin-bottom:5px}
+    .feature span{font-size:13px;color:var(--muted)}
+    form{display:grid;gap:14px}
+    label{font-size:12px;font-weight:750;color:#cfcfcf}
+    input,select,textarea{width:100%;margin-top:7px;padding:13px 14px;border-radius:11px;border:1px solid var(--line);background:#0c0c0c;color:#fff;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#4b4b4b}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact-box{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}
+    .contact-note{color:var(--muted);font-size:14px}
+    .phone{font-size:28px;font-weight:850}
+    .socials{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+    .social{display:inline-flex;align-items:center;gap:8px;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:#0d0d0d;font-size:12px}
+    .social svg{width:16px;height:16px}
+    footer{border-top:1px solid var(--line);padding:28px 0 44px;margin-top:24px}
+    .footer-row{display:flex;justify-content:space-between;gap:18px;align-items:center}
+    .footer-copy{color:#888;font-size:12px}
+    .mini{font-size:11px;color:#777}
+    @media (max-width:900px){
+      .hero-grid,.contact-box,.about{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .nav-links{display:none}
+    }
+    @media (max-width:560px){
+      .container{width:min(var(--max),calc(100% - 22px))}
+      .hero{padding-top:36px}
+      .grid{grid-template-columns:1fr}
+      .features,.form-grid{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:8px}
+      .footer-row{display:block}
+      .phone{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="ODAA Gallery home">
+      <div class="og">OG</div>
+      <div>ODAA GALLERY<small>ADAL DIGITAL · PRODUCTION LINE</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#collection">Collection</a>
+      <a href="#story">About</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">ADAL DIGITAL · ODAA GALLERY</div>
+        <h1>Wear your <span>roots.</span></h1>
+        <p class="hero-copy">The ODAA Gallery Production Line presents premium caps and snapbacks built around a signature Tree of Life emblem. Clean silhouettes, bold embroidery, and a collection designed for everyday identity.</p>
+        <div class="price">1,800 ETB <small>per cap / snapback</small></div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#order">Order now</a>
+          <a class="btn btn-secondary" href="tel:0915415011">Call 0915 415 011</a>
+        </div>
+        <p class="mini" style="margin-top:14px">Size: adjustable snapback / one-size fit. Confirm fit preference with your order.</p>
+      </div>
+      <div class="hero-card">
+        <img src="assets/signature-black-gold.jpg" alt="ODAA Gallery signature cap">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="collection">
+    <div class="container">
+      <div class="section-head">
+        <h2>The collection</h2>
+        <p>Seven color combinations. One ODAA Gallery identity.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#050505 65%,#d71920 65%,#d71920 82%,#fff 82%)"></div><div class="product-media"><img src="assets/collection-wide.jpg" alt="Black red white ODAA cap"></div><div class="card-body"><h3>Black / Red / White</h3><p>Signature Edition · bold and urban</p><span class="tag">1,800 ETB</span></div></article>
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#0b4a2f 55%,#e8be3f 55%)"></div><div class="product-media"><img src="assets/green-yellow-banner.png" alt="Green and yellow ODAA cap"></div><div class="card-body"><h3>Green / Yellow</h3><p>Heritage Edition · rich and cultural</p><span class="tag">1,800 ETB</span></div></article>
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#184f39 65%,#fff 65%)"></div><div class="product-media"><img src="assets/green-yellow-banner.png" alt="Green and white ODAA cap"></div><div class="card-body"><h3>Green / White</h3><p>Classic Edition · clean and versatile</p><span class="tag">1,800 ETB</span></div></article>
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#5d3a2a 65%,#fff 65%)"></div><div class="product-media"><img src="assets/collection-wide.jpg" alt="Brown and white ODAA cap"></div><div class="card-body"><h3>Brown / White</h3><p>Earth Edition · warm and understated</p><span class="tag">1,800 ETB</span></div></article>
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#b51019 65%,#fff 65%)"></div><div class="product-media"><img src="assets/collection-wide.jpg" alt="Red and white ODAA cap"></div><div class="card-body"><h3>Red / White</h3><p>Legacy Edition · strong and clean</p><span class="tag">1,800 ETB</span></div></article>
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#173f87 65%,#fff 65%)"></div><div class="product-media"><img src="assets/collection-wide.jpg" alt="Blue and white ODAA cap"></div><div class="card-body"><h3>Blue / White</h3><p>Heritage Blue · refined and versatile</p><span class="tag">1,800 ETB</span></div></article>
+        <article class="card"><div class="swatch" style="background:linear-gradient(90deg,#d767a9 55%,#6e4aa6 55%)"></div><div class="product-media"><img src="assets/collection-wide.jpg" alt="Pink and purple ODAA cap"></div><div class="card-body"><h3>Pink / Purple</h3><p>Culture Edition · expressive and modern</p><span class="tag">1,800 ETB</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="container about">
+      <div class="panel">
+        <h3>ODAA GALLERY · PRODUCTION LINE</h3>
+        <p>ODAA Gallery is a merchandise sub-brand under Adal Digital, translating cultural identity into contemporary streetwear. The Tree of Life emblem is the collection's central visual language: roots for heritage, growth for the future, and connection across generations.</p>
+        <div class="features">
+          <div class="feature"><b>Signature embroidery</b><span>Detailed Tree of Life emblem with a tactile premium finish.</span></div>
+          <div class="feature"><b>Modern fit</b><span>Structured caps and snapbacks designed for everyday wear.</span></div>
+          <div class="feature"><b>Seven colorways</b><span>Multiple combinations to match different styles and moods.</span></div>
+        </div>
+      </div>
+      <div class="panel" id="order">
+        <h3>Order your ODAA cap</h3>
+        <p class="contact-note">Complete the form, then send your order details to the ODAA Gallery team by phone.</p>
+        <form onsubmit="placeOrder(event)">
+          <div class="form-grid">
+            <div><label>Full name<input required name="name" placeholder="Your name"></label></div>
+            <div><label>Phone<input required name="phone" type="tel" placeholder="09XXXXXXXX"></label></div>
+          </div>
+          <div class="form-grid">
+            <div><label>Colorway
+              <select name="color">
+                <option>Black / Red / White</option><option>Green / Yellow</option><option>Green / White</option>
+                <option>Brown / White</option><option>Red / White</option><option>Blue / White</option><option>Pink / Purple</option>
+              </select>
+            </label></div>
+            <div><label>Size / fit
+              <select name="size"><option>Adjustable / One Size</option><option>Need fit guidance</option></select>
+            </label></div>
+          </div>
+          <div><label>Notes<textarea name="notes" rows="4" placeholder="Delivery area, quantity, or other request"></textarea></label></div>
+          <button class="btn btn-primary" type="submit">Prepare order request</button>
+          <div id="status" class="mini" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-box">
+      <div class="panel">
+        <div class="eyebrow">CONTACT ODAA GALLERY</div>
+        <h2 style="margin:8px 0 10px">Order by phone</h2>
+        <div class="phone"><a href="tel:0915415011">0915 415 011</a></div>
+        <p class="contact-note">For availability, colorway confirmation, fit guidance, and delivery details.</p>
+      </div>
+      <div class="panel">
+        <h3>Follow ODAA Gallery</h3>
+        <p class="contact-note">Replace the placeholder links below with the brand's live social profile URLs before publishing.</p>
+        <div class="socials">
+          <a class="social" href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M10 20c.8-2.6 1.2-4.2 1.7-6.1M9.8 11.2c0-2.3 1.4-4.2 3.6-4.2 2.1 0 3.4 1.4 3.4 3.4 0 2.6-1.6 4.7-3.9 4.7-1.1 0-2-.6-2.4-1.3"/></svg>Pinterest</a>
+          <a class="social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="17.3" cy="6.8" r=".8" fill="currentColor" stroke="none"/></svg>Instagram</a>
+          <a class="social" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5c.4 2.4 1.7 3.8 4 4"/><path d="M14 5v9.2a3.8 3.8 0 1 1-3-3.7"/><path d="M18 9.1a8.6 8.6 0 0 1-4-1.6"/></svg>TikTok</a>
+          <a class="social" href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 5l14 14M19 5L5 19"/></svg>X</a>
+          <a class="social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13.3 20v-7h2.4l.4-2.7h-2.8V8.6c0-.8.3-1.4 1.5-1.4h1.5V4.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4v1.6H7.3V13h2.3v7"/></svg>Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div class="brand"><div class="og">OG</div><div>ODAA GALLERY<small>AN ADAL DIGITAL SUB-BRAND</small></div></div>
+    <div class="footer-copy">© <span id="year"></span> ODAA Gallery. Rooted. Proud. Original.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function placeOrder(e){
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const text = [
+      "ODAA Gallery Order Request",
+      "Name: " + f.get("name"),
+      "Phone: " + f.get("phone"),
+      "Colorway: " + f.get("color"),
+      "Size/Fit: " + f.get("size"),
+      "Notes: " + (f.get("notes") || "—"),
+      "Price: 1,800 ETB"
+    ].join("\\n");
+    document.getElementById('status').textContent = "Order details prepared. Call 0915 415 011 to confirm availability and delivery.";
+    // Optional manual copy for the customer.
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(()=>{});
+  }
+</script>
+</body>
+</html>
